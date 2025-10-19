@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramitha C K - Data Science & Engineering Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #3182ce;
+            --light-color: #f7fafc;
+            --dark-color: #2d3748;
+            --success-color: #38a169;
+            --text-color: #4a5568;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            animation: fadeInUp 1s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .upload-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .about-image:hover .upload-overlay {
+            opacity: 1;
+        }
+
+        .upload-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .upload-text {
+            color: white;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        #imageUpload {
+            display: none;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-card h3 i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Project Cards */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-tag {
+            background-color: var(--light-color);
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Certification Cards */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .cert-icon {
+            background-color: var(--light-color);
+            color: var(--accent-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cert-details h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-details p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title h2::after {
+            background-color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Image Upload Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+        }
+
+        .upload-options {
+            margin: 20px 0;
+        }
+
+        .upload-option {
+            margin: 15px 0;
+        }
+
+        .upload-option input {
+            margin-right: 10px;
+        }
+
+        .upload-preview {
+            margin: 20px 0;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Pramitha C K</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>Pramitha C K</h1>
+            <p>Data Analyst </p>
+            <p>An Information Science & Engineering graduate skilled in Python, SQL, and web technologies. Passionate about applying technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm an Information Science & Engineering graduate with a CGPA of 8.8 from MITE, VTU. I have successfully completed Data Analytics Training under the Livelihoods Project (Accenture & Nasscom Foundation with AISECT), gaining hands-on experience in data analysis, visualization, and problem-solving.</p>
+                <p>My technical expertise includes Python, SQL, and various data science libraries like Pandas, NumPy, and Scikit-learn. I'm passionate about applying my technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
+                <p>I have experience in web development, machine learning, and data visualization through my internships and projects. I'm always eager to learn new technologies and take on challenging projects that allow me to grow both personally and professionally.</p>
+            </div>
+            <div class="about-image">
+                <img id="profileImage" src="https://picsum.photos/seed/pramitha/250/250.jpg" alt="Pramitha C K" class="profile-img">
+                <div class="upload-overlay" onclick="openImageModal()">
+                    <div>
+                        <i class="fas fa-camera"></i>
+                        <div class="upload-text">Click to upload your photo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-globe"></i> Web Technologies</h3>
+                <ul class="skill-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-tools"></i> Libraries & Tools</h3>
+                <ul class="skill-list">
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>Scikit-learn</li>
+                    <li>Jupyter Notebook</li>
+                    <li>VS Code</li>
+                    <li>PyCharm</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-chart-bar"></i> Data Analytics & Visualization</h3>
+                <ul class="skill-list">
+                    <li>Power BI</li>
+                    <li>Advanced Excel</li>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <div class="section-title">
+            <h2>Education & Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>B.E. in Information Science & Engineering</h3>
+                    <div class="date">2021 - 2025</div>
+                    <p>MITE, VTU</p>
+                    <p>CGPA: 8.8</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Senior Secondary (12th)</h3>
+                    <div class="date">2019 - 2021</div>
+                    <p>Percentage: 88.16%</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Internship - RSC Systems Pvt. Ltd.</h3>
+                    <div class="date">Feb - May 2025</div>
+                    <p>Built a web-based platform to compare prices across multiple e-commerce sites, helping users find the best deals. Developed web scraping tools, implemented price comparison logic, and designed a user-friendly interface.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Internship - CodelabSystem</h3>
+                    <div class="date">Oct - Nov 2023</div>
+                    <p>Developed a machine learning model to predict house prices based on various features. The project involved end-to-end implementation, including data preprocessing, feature engineering, model training, evaluation, and deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="project-content">
+                    <h3>SmartPDF QueryBot</h3>
+                    <p>This system allows users to upload PDF documents and ask questions about the content. The system analyzes the PDF and provides accurate answers based on the text in the document.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">LangChain</span>
+                        <span class="tool-tag">OpenAI API</span>
+                        <span class="tool-tag">PyPDF2</span>
+                        <span class="tool-tag">FAISS</span>
+                        <span class="tool-tag">Streamlit</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Retail Sales Analysis Dashboard</h3>
+                    <p>Analyzed a retail store's sales dataset to uncover insights into product performance, customer behavior, and regional sales trends. Built interactive dashboards displaying KPIs such as Total Sales, Profit Margin, and Monthly Trends.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">Pandas</span>
+                        <span class="tool-tag">Power BI</span>
+                        <span class="tool-tag">Excel</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="project-content">
+                    <h3>House Price Prediction</h3>
+                    <p>Developed a machine learning model to predict house prices based on various features such as location, number of bedrooms, square footage, and amenities. The project involved end-to-end implementation.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">Scikit-learn</span>
+                        <span class="tool-tag">Pandas</span>
+                        <span class="tool-tag">NumPy</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="container">
+        <div class="section-title">
+            <h2>Certifications</h2>
+        </div>
+        <div class="certifications-container">
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-details">
+                    <h3>C Programming</h3>
+                    <p>NPTEL (2023)</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-details">
+                    <h3>Programming in Java</h3>
+                    <p>NPTEL (2024)</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-details">
+                    <h3>Python Fundamentals, Python for Data Science</h3>
+                    <p>Great Learning (2024)</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-details">
+                    <h3>Cloud Foundation</h3>
+                    <p>Great Learning (2025)</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-details">
+                    <h3>Data Analytics Training</h3>
+                    <p>Livelihoods Project - Accenture & Nasscom Foundation with AISECT (2025)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in hearing about new opportunities and exciting projects. Feel free to reach out if you'd like to connect!</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>pramithackharvi@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91-7676737239</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Udupi District, Karnataka, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/pramitha-ck-8b6333232" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:pramithackharvi@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Pramitha C K. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Upload Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <h2>Upload Your Profile Picture</h2>
+            <div class="upload-options">
+                <div class="upload-option">
+                    <label for="fileInput">Choose a file from your device:</label>
+                    <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+                </div>
+                <div class="upload-option">
+                    <label for="urlInput">Or enter an image URL:</label>
+                    <input type="text" id="urlInput" placeholder="https://example.com/your-image.jpg">
+                    <button class="btn btn-primary" onclick="updateImageFromUrl()">Use URL</button>
+                </div>
+            </div>
+            <img id="uploadPreview" class="upload-preview" alt="Preview">
+            <div id="uploadMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+            
+            // Reset the form
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Image Upload Functions
+        function openImageModal() {
+            document.getElementById('imageModal').style.display = 'block';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function() {
+                const preview = document.getElementById('uploadPreview');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                
+                document.getElementById('uploadMessage').innerHTML = 
+                    '<p style="color: var(--success-color); margin-top: 10px;">Image loaded successfully! Click "Use This Image" to update your profile.</p>' +
+                    '<button class="btn btn-primary" style="margin-top: 10px;" onclick="updateProfileImage()">Use This Image</button>';
+            }
+            
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateImageFromUrl() {
+            const url = document.getElementById('urlInput').value;
+            
+            if (url) {
+                const preview = document.getElementById('uploadPreview');
+                preview.src = url;
+                preview.style.display = 'block';
+                
+                preview.onerror = function() {
+                    document.getElementById('uploadMessage').innerHTML = 
+                        '<p style="color: red; margin-top: 10px;">Failed to load image from URL. Please check the URL and try again.</p>';
+                };
+                
+                preview.onload = function() {
+                    document.getElementById('uploadMessage').innerHTML = 
+                        '<p style="color: var(--success-color); margin-top: 10px;">Image loaded successfully! Click "Use This Image" to update your profile.</p>' +
+                        '<button class="btn btn-primary" style="margin-top: 10px;" onclick="updateProfileImage()">Use This Image</button>';
+                };
+            }
+        }
+
+        function updateProfileImage() {
+            const preview = document.getElementById('uploadPreview');
+            const profileImage = document.getElementById('profileImage');
+            
+            if (preview.src) {
+                profileImage.src = preview.src;
+                closeImageModal();
+                
+                // Save to localStorage for persistence
+                localStorage.setItem('profileImage', preview.src);
+            }
+        }
+
+        // Load saved profile image on page load
+        window.addEventListener('load', function() {
+            const savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                document.getElementById('profileImage').src = savedImage;
+            }
+        });
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeImageModal();
+            }
+        }
+    </script>
+</body>
+</html>
