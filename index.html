@@ -446,6 +446,31 @@
             font-size: 0.8rem;
         }
 
+        /* GitHub Link Icon */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .github-link:hover {
+            background-color: #333;
+            transform: translateY(-3px);
+        }
+
+        .github-link i {
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
         /* Certification Cards */
         .certifications-container {
             display: grid;
@@ -742,26 +767,24 @@
     </section>
 
     <!-- About Section -->
-  <!-- About Section -->
-<section id="about" class="container">
-    <div class="section-title">
-        <h2>About Me</h2>
-    </div>
-    <div class="about-content">
-        <div class="about-text">
-            <p>I'm an Information Science & Engineering graduate with a CGPA of 8.8 from MITE, VTU. I have successfully completed Data Analytics Training under the Livelihoods Project (Accenture & Nasscom Foundation with AISECT), gaining hands-on experience in data analysis, visualization, and problem-solving.</p>
-            <p>My technical expertise includes Python, SQL, and various data science libraries like Pandas, NumPy, and Scikit-learn. I'm passionate about applying my technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
-            <p>I have experience in web development, machine learning, and data visualization through my internships and projects. I'm always eager to learn new technologies and take on challenging projects that allow me to grow both personally and professionally.</p>
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>About Me</h2>
         </div>
-        <div class="about-image">
-            <img id="profileImage" 
-                 src="https://raw.githubusercontent.com/Pramithack/Pramitha.github.io/main/image.jpg" 
-                 alt="Pramitha C K" 
-                 class="profile-img">
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm an Information Science & Engineering graduate with a CGPA of 8.8 from MITE, VTU. I have successfully completed Data Analytics Training under the Livelihoods Project (Accenture & Nasscom Foundation with AISECT), gaining hands-on experience in data analysis, visualization, and problem-solving.</p>
+                <p>My technical expertise includes Python, SQL, and various data science libraries like Pandas, NumPy, and Scikit-learn. I'm passionate about applying my technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
+                <p>I have experience in web development, machine learning, and data visualization through my internships and projects. I'm always eager to learn new technologies and take on challenging projects that allow me to grow both personally and professionally.</p>
+            </div>
+            <div class="about-image">
+                <img id="profileImage" 
+                     src="https://raw.githubusercontent.com/Pramithack/Pramitha.github.io/main/image.jpg" 
+                     alt="Pramitha C K" 
+                     class="profile-img">
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="container">
@@ -847,69 +870,77 @@
             </div>
         </div>
     </section>
-<!-- Projects -->
-<section id="projects" class="container">
-    <div class="section-title">
-        <h2>Projects</h2>
-    </div>
-    <div class="projects-container">
 
-        <div class="project-card">
-            <div class="project-img"><i class="fas fa-file-pdf"></i></div>
-            <div class="project-content">
-                <h3>SmartPDF Query Bot</h3>
-                <p>AI-based PDF document question answering chatbot using NLP with Streamlit UI.</p>
-                <div class="project-tools">
-                    <span class="tool-tag">Python</span>
-                    <span class="tool-tag">NLP</span>
-                    <span class="tool-tag">Streamlit</span>
-                </div>
-                <a href="https://github.com/Pramithack/Smartpdf-QueryBot" class="btn btn-outline" target="_blank">View Project</a>
-            </div>
+    <!-- Projects -->
+    <section id="projects" class="container">
+        <div class="section-title">
+            <h2>Projects</h2>
         </div>
+        <div class="projects-container">
 
-        <div class="project-card">
-            <div class="project-img"><i class="fas fa-chart-bar"></i></div>
-            <div class="project-content">
-                <h3>Retail Sales Analysis</h3>
-                <p>Data analysis and visualization dashboard designed to analyze retail performance metrics.</p>
-                <div class="project-tools">
-                    <span class="tool-tag">Data Analysis</span>
-                    <span class="tool-tag">Python</span>
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-file-pdf"></i></div>
+                <div class="project-content">
+                    <h3>SmartPDF Query Bot</h3>
+                    <p>AI-based PDF document question answering chatbot using NLP with Streamlit UI.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">NLP</span>
+                        <span class="tool-tag">Streamlit</span>
+                    </div>
+                    <a href="https://github.com/Pramithack/Smartpdf-QueryBot" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
-                <a href="https://github.com/Pramithack/Retail_Sales_Analysis" class="btn btn-outline" target="_blank">View Project</a>
             </div>
-        </div>
 
-        <div class="project-card">
-            <div class="project-img"><i class="fas fa-shopping-cart"></i></div>
-            <div class="project-content">
-                <h3>E-Commerce Price Comparison</h3>
-                <p>Compares product prices across multiple e-commerce platforms using scraping automation.</p>
-                <div class="project-tools">
-                    <span class="tool-tag">Web Scraping</span>
-                    <span class="tool-tag">Python</span>
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-chart-bar"></i></div>
+                <div class="project-content">
+                    <h3>Retail Sales Analysis</h3>
+                    <p>Data analysis and visualization dashboard designed to analyze retail performance metrics.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Data Analysis</span>
+                        <span class="tool-tag">Python</span>
+                    </div>
+                    <a href="https://github.com/Pramithack/Retail_Sales_Analysis" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
-                <a href="https://github.com/Pramithack/E-commerce-_Price_Comparison_Platform" class="btn btn-outline" target="_blank">View Project</a>
             </div>
-        </div>
 
-        <div class="project-card">
-            <div class="project-img"><i class="fas fa-chart-line"></i></div>
-            <div class="project-content">
-                <h3>House Price Prediction</h3>
-                <p>Regression-based ML model trained on house attributes for price prediction.</p>
-                <div class="project-tools">
-                    <span class="tool-tag">Machine Learning</span>
-                    <span class="tool-tag">Python</span>
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-shopping-cart"></i></div>
+                <div class="project-content">
+                    <h3>E-Commerce Price Comparison</h3>
+                    <p>Compares product prices across multiple e-commerce platforms using scraping automation.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Web Scraping</span>
+                        <span class="tool-tag">Python</span>
+                    </div>
+                    <a href="https://github.com/Pramithack/E-commerce-_Price_Comparison_Platform" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
-                <a href="https://github.com/Pramithack/House-Price-Prediction" class="btn btn-outline" target="_blank">View Project</a>
             </div>
+
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-chart-line"></i></div>
+                <div class="project-content">
+                    <h3>House Price Prediction</h3>
+                    <p>Regression-based ML model trained on house attributes for price prediction.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Machine Learning</span>
+                        <span class="tool-tag">Python</span>
+                    </div>
+                    <a href="https://github.com/Pramithack/House-Price-Prediction" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+
         </div>
-
-    </div>
-</section>
-
+    </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="container">
@@ -964,51 +995,49 @@
             </div>
         </div>
     </section>
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
-                
-                <!-- Email -->
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:pramithackharvi@gmail.com">pramithackharvi@gmail.com</a></p>
-                    </div>
-                </div>
 
-                <!-- LinkedIn -->
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <p><a href="https://www.linkedin.com/in/pramitha-ck/" target="_blank">linkedin.com/in/pramitha-ck</a></p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                    
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:pramithackharvi@gmail.com">pramithackharvi@gmail.com</a></p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- GitHub -->
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h4>GitHub</h4>
-                        <p><a href="https://github.com/Pramithack" target="_blank">github.com/Pramithack</a></p>
+                    <!-- LinkedIn -->
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/pramitha-ck/" target="_blank">linkedin.com/in/pramitha-ck</a></p>
+                        </div>
                     </div>
-                </div>
 
+                    <!-- GitHub -->
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/Pramithack" target="_blank">github.com/Pramithack</a></p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1069,7 +1098,7 @@
         });
 
         // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -1193,12 +1222,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
