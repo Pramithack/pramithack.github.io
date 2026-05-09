@@ -388,6 +388,18 @@
             margin-bottom: 1rem;
         }
 
+        /* Custom styling for timeline bullet points */
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
         /* Project Cards */
         .projects-container {
             display: grid;
@@ -742,7 +754,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Internship</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -757,8 +769,8 @@
     <section id="home" class="hero">
         <div class="hero-content container">
             <h1>Pramitha C K</h1>
-            <p>Information Science Graduate | Data Analyst Entuassist </p>
-            <p>An Information Science & Engineering graduate skilled in Python, SQL, and web technologies. Passionate about applying technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
+            <p>Software Developer Apprentice at Fidelity Investments </p>
+            <p>An Information Science & Engineering graduate skilled in Angular, Python, SQL, and REST APIs. Passionate about building dynamic frontend applications and applying analytical skills to develop impactful, data-driven solutions.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -773,8 +785,8 @@
         </div>
         <div class="about-content">
             <div class="about-text">
-                <p>I'm an Information Science & Engineering graduate with a CGPA of 8.8 from MITE, VTU. I have successfully completed Data Analytics Training under the Livelihoods Project (Accenture & Nasscom Foundation with AISECT), gaining hands-on experience in data analysis, visualization, and problem-solving.</p>
-                <p>My technical expertise includes Python, SQL, and various data science libraries like Pandas, NumPy, and Scikit-learn. I'm passionate about applying my technical and analytical skills to derive insights from data and develop impactful, data-driven solutions.</p>
+                <p>I'm an Information Science & Engineering graduate with a CGPA of 8.8 from MITE, VTU. Currently, I am working as a Software Developer Apprentice at Fidelity Investments, where I specialize in building robust frontend applications using Angular and integrating them with REST APIs.</p>
+                <p>My technical expertise includes Angular, Python, SQL, and various data science libraries like Pandas, NumPy, and Scikit-learn. I have successfully completed Data Analytics Training under the Livelihoods Project (Accenture & Nasscom Foundation with AISECT), gaining hands-on experience in data analysis, visualization, and problem-solving.</p>
                 <p>I have experience in web development, machine learning, and data visualization through my internships and projects. I'm always eager to learn new technologies and take on challenging projects that allow me to grow both personally and professionally.</p>
             </div>
             <div class="about-image">
@@ -799,14 +811,17 @@
                     <li>C</li>
                     <li>Java</li>
                     <li>SQL</li>
+                    <li>TypeScript</li>
                 </ul>
             </div>
             <div class="skill-card">
                 <h3><i class="fas fa-globe"></i> Web Technologies</h3>
                 <ul class="skill-list">
+                    <li>Angular</li>
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>Javascript</li>
+                    <li>REST APIs</li>
                 </ul>
             </div>
             <div class="skill-card">
@@ -817,8 +832,7 @@
                     <li>Scikit-learn</li>
                     <li>Jupyter Notebook</li>
                     <li>VS Code</li>
-                    <li>PyCharm</li>
-                    <li>GitHub</li>
+                    <li>Git & GitHub</li>
                 </ul>
             </div>
             <div class="skill-card">
@@ -834,25 +848,31 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="internship" class="container">
+    <section id="experience" class="container">
         <div class="section-title">
-            <h2>Education & Internship</h2>
+            <h2>Experience & Education</h2>
         </div>
         <div class="timeline">
             <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Software Developer Apprentice</h3>
+                    <div class="date">Feb 2026 - Present</div>
+                    <p><strong>Fidelity Investments</strong></p>
+                    <ul>
+                        <li>Building and maintaining frontend applications using Angular framework</li>
+                        <li>Developing RESTful API integrations for seamless data flow between frontend and backend services</li>
+                        <li>Collaborating with cross-functional teams to deliver scalable web solutions</li>
+                        <li>Participating in code reviews and following best practices for clean, maintainable code</li>
+                        <li>Learnt and applied Git/GitHub version control, test case running, and lint running in daily workflows</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item right">
                 <div class="timeline-content">
                     <h3>B.E. in Information Science & Engineering</h3>
                     <div class="date">2021 - 2025</div>
                     <p>Mangalore Institute of Technology & Engineering, VTU</p>
                     <p>CGPA: 8.8</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <h3>Senior Secondary (12th)</h3>
-                    <div class="date">2019 - 2021</div>
-                      <p>RN Shetty PU College Kundapura</p>
-                    <p>Percentage: 88.16%</p>
                 </div>
             </div>
             <div class="timeline-item left">
@@ -867,6 +887,14 @@
                     <h3>Internship - CodelabSystem</h3>
                     <div class="date">Oct - Nov 2023</div>
                     <p>Developed a machine learning model to predict house prices based on various features. The project involved end-to-end implementation, including data preprocessing, feature engineering, model training, evaluation, and deployment.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Senior Secondary (12th)</h3>
+                    <div class="date">2019 - 2021</div>
+                      <p>RN Shetty PU College Kundapura</p>
+                    <p>Percentage: 88.16%</p>
                 </div>
             </div>
         </div>
@@ -906,7 +934,7 @@
                         <span class="tool-tag">Data Analysis</span>
                         <span class="tool-tag">Python</span>
                         <span class="tool-tag">Pandas</span>
-                        <span class="tool-tag">PoweBI</span>
+                        <span class="tool-tag">PowerBI</span>
                         <span class="tool-tag">Excel</span>
                     </div>
                     <a href="https://github.com/Pramithack/Retail_Sales_Analysis" class="github-link" target="_blank">
@@ -1019,7 +1047,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:pramithackharvi@gmail.com">pramithackharvi@gmail.com</a></p>
+                            <p><a href="mailto:pramithackharvi@gmail.com" style="color: white;">pramithackharvi@gmail.com</a></p>
                         </div>
                     </div>
 
@@ -1028,7 +1056,7 @@
                         <i class="fab fa-linkedin"></i>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/pramitha-ck/" target="_blank">linkedin.com/in/pramitha-ck</a></p>
+                            <p><a href="https://www.linkedin.com/in/pramitha-ck/" target="_blank" style="color: white;">linkedin.com/in/pramitha-ck</a></p>
                         </div>
                     </div>
 
@@ -1037,7 +1065,7 @@
                         <i class="fab fa-github"></i>
                         <div>
                             <h4>GitHub</h4>
-                            <p><a href="https://github.com/Pramithack" target="_blank">github.com/Pramithack</a></p>
+                            <p><a href="https://github.com/Pramithack" target="_blank" style="color: white;">github.com/Pramithack</a></p>
                         </div>
                     </div>
 
@@ -1053,14 +1081,14 @@
                 <a href="https://linkedin.com/in/pramitha-ck-8b6333232" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com" target="_blank">
+                <a href="https://github.com/Pramithack" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:pramithackharvi@gmail.com" target="_blank">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p>&copy; 2024 Pramitha C K. All Rights Reserved.</p>
+            <p>&copy; 2025 Pramitha C K. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -1230,5 +1258,3 @@
     </script>
 </body>
 </html>
-
-
